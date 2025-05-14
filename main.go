@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"yourmodule/validator"
+	"validate-go-moves/validator"
 )
 
 func main() {
-	sgf := "(;GM[1]FF[4]SZ[19]AP[MyGoApp:1.0];B[dd];W[dc];B[cd];W[cc])"
-	err := validator.ValidateSGF(sgf)
+	sgfContent := "(;GM[1]FF[4]SZ[19]AP[MyGoApp:1.0];B[dd];W[dc];B[cd];W[cc])"
+	err := validator.ValidateSGF(sgfContent)
 	if err != nil {
 		fmt.Println("Ошибка валидации:", err)
 	} else {

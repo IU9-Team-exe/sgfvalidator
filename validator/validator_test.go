@@ -1,6 +1,7 @@
 package validator
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -34,6 +35,7 @@ func TestValidateSGF(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			fmt.Printf("Testing: %s, SGF: %s\n", tt.name, tt.sgf)
 			err := ValidateSGF(tt.sgf)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("ValidateSGF() error = %v, wantErr %v", err, tt.wantErr)
